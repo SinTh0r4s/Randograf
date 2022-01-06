@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Randograf</string>
+    <string name="card_title_game_end">Game End</string>string>
+    <string name="card_title_two_options">Two Options</string>string>
+    <string name="card_title_joker">Joker</string>string>
+    <string name="card_title_monster">Monster</string>string>
 </resources>

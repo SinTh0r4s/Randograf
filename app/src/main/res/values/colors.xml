@@ -19,6 +19,7 @@
     <color name="river">#FF2196F3</color>
     <color name="monster">#FF6200EE</color>
     <color name="ruins">#FF686868</color>
+    <color name="joker">#FFFFC107</color>
 
     <color name="button_new">#CC1608</color>
     <color name="button_undo">#FFFFFF</color>
