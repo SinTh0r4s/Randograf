@@ -45,6 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/button_action"
         android:paddingVertical="32dp"
         android:text="Draw/Season"
         app:layout_constraintBottom_toTopOf="@+id/veryUsefulLabel"
@@ -58,6 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/button_new"
         android:text="New"
         app:layout_constraintBottom_toTopOf="@+id/veryUsefulLabel"
         app:layout_constraintStart_toStartOf="parent" />
@@ -68,6 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/ruins"
         android:text="Undo"
         app:layout_constraintBottom_toTopOf="@+id/veryUsefulLabel"
         app:layout_constraintEnd_toEndOf="parent" />
