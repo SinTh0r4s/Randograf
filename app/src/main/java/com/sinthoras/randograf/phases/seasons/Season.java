@@ -19,7 +19,7 @@ public abstract class Season implements Phase {
     }
 
     @Override
-    public boolean isSeasonOver() {
+    public boolean isOver() {
         return deck.getElapsedTime() >= getSeasonDuration();
     }
 

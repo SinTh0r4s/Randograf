@@ -8,5 +8,6 @@ enum class Colors(val color: Color) {
     FOREST(R.color.forest.toColor()),
     RIVER(R.color.river.toColor()),
     FIELD(R.color.fields.toColor()),
-    JOKER(R.color.joker.toColor());
+    MONSTER(R.color.monster.toColor()),
+    ALL(R.color.all.toColor());
 }

@@ -8,5 +8,7 @@ public interface Phase {
 
     Phase getNextPhase();
 
-    boolean isSeasonOver();
+    boolean isOver();
+
+    Card getCover();
 }

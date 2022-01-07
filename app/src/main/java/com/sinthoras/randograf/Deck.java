@@ -1,5 +1,7 @@
 package com.sinthoras.randograf;
 
+import static com.sinthoras.randograf.Random.drawRandomFromList;
+
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.CardJoker;
 import com.sinthoras.randograf.cards.CardMonster;
@@ -10,7 +12,6 @@ import com.sinthoras.randograf.cards.CardVariableStructure;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Deck {
@@ -18,8 +19,6 @@ public class Deck {
     private final List<Card> availableCards = new ArrayList<>();
     private final List<Card> drawnCards = new ArrayList<>();
     private int elapsedTime = 0;
-
-    private final Random random = new Random();
 
     public Deck() {
 
@@ -91,14 +90,10 @@ public class Deck {
     }
 
     private Card drawRandomAvailableCard() {
-        final Card drawnCard = selectRandomAvailableCard();
+        final Card drawnCard = drawRandomFromList(availableCards);
         availableCards.remove(drawnCard);
         drawnCards.add(drawnCard);
         return drawnCard;
-    }
-
-    private Card selectRandomAvailableCard() {
-        return availableCards.get(random.nextInt(availableCards.size()));
     }
 }
 

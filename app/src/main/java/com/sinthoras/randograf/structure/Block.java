@@ -5,11 +5,11 @@ import android.util.ArraySet;
 import java.util.Objects;
 import java.util.Set;
 
-public class Coordinate {
+public class Block {
     private double x;
     private double y;
 
-    public Coordinate(double x, double y) {
+    public Block(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -22,16 +22,16 @@ public class Coordinate {
         return y;
     }
 
-    public Set<Coordinate> getNeighbors() {
-        final Set<Coordinate> neighbors = new ArraySet<>();
-        neighbors.add(new Coordinate(getX() - 1, getY() - 1));
-        neighbors.add(new Coordinate(getX() - 1, getY() + 1));
-        neighbors.add(new Coordinate(getX() + 1, getY() - 1));
-        neighbors.add(new Coordinate(getX() + 1, getY() + 1));
+    public Set<Block> getNeighbors() {
+        final Set<Block> neighbors = new ArraySet<>();
+        neighbors.add(new Block(getX() - 1, getY() - 1));
+        neighbors.add(new Block(getX() - 1, getY() + 1));
+        neighbors.add(new Block(getX() + 1, getY() - 1));
+        neighbors.add(new Block(getX() + 1, getY() + 1));
         return neighbors;
     }
 
-    public void subtract(Coordinate other) {
+    public void subtract(Block other) {
         x -= other.getX();
         y -= other.getY();
     }
@@ -44,7 +44,7 @@ public class Coordinate {
         if (other == null || getClass() != other.getClass()) {
             return false;
         }
-        final Coordinate that = (Coordinate) other;
+        final Block that = (Block) other;
         final double compareMargin = 0.01;
         return floatingPointEqual(x, that.x, compareMargin) && floatingPointEqual(y,that.y, compareMargin);
     }

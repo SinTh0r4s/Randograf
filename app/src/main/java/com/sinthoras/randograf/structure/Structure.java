@@ -7,9 +7,9 @@ import java.util.List;
 public class Structure {
 
     private final Colors color;
-    private final List<Coordinate> elements;
+    private final List<Block> elements;
 
-    Structure(List<Coordinate> elements, Colors color) {
+    Structure(List<Block> elements, Colors color) {
         this.elements = elements;
         this.color = color;
     }

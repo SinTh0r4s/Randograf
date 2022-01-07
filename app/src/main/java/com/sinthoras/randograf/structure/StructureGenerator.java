@@ -1,19 +1,18 @@
 package com.sinthoras.randograf.structure;
 
+import static com.sinthoras.randograf.Random.drawRandomFromList;
+
 import com.sinthoras.randograf.Colors;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Set;
 import java.util.function.ToDoubleFunction;
 import java.util.stream.Collectors;
 
 public class StructureGenerator {
 
-    private final List<Coordinate> structureElements = new ArrayList<>();
-
-    private final Random random = new Random();
+    private final List<Block> structureElements = new ArrayList<>();
 
     public static StructureGenerator generateStructure(int size) {
         final StructureGenerator structureGenerator = new StructureGenerator();
@@ -35,46 +34,54 @@ public class StructureGenerator {
     }
 
     private void addRootElement() {
-        structureElements.add(new Coordinate(0, 0));
+        structureElements.add(new Block(0, 0));
     }
 
     private void addRandomNeighbor() {
-        final List<Coordinate> neighbors = new ArrayList<>(getNewNeighbors());
-        final Coordinate selectedNeighbor = neighbors.get(random.nextInt(neighbors.size()));
+        final List<Block> neighbors = new ArrayList<>(getAvailableNeighborsToAdd());
+        final Block selectedNeighbor = drawRandomFromList(neighbors);
         structureElements.add(selectedNeighbor);
     }
 
-    private Set<Coordinate> getNewNeighbors() {
-        final Set<Coordinate> neighbors = getUniqueNeighbors();
+    private Set<Block> getAvailableNeighborsToAdd() {
+        final Set<Block> neighbors = getUniqueNeighbors();
         neighbors.removeAll(structureElements);
         return neighbors;
     }
 
-    private Set<Coordinate> getUniqueNeighbors() {
+    private Set<Block> getUniqueNeighbors() {
         return structureElements.stream()
-                .map(Coordinate::getNeighbors)
+                .map(Block::getNeighbors)
                 .flatMap(Set::stream)
                 .collect(Collectors.toSet());
     }
 
     private void removeRandomElement() {
-        structureElements.remove(random.nextInt(structureElements.size()));
+        structureElements.remove(drawRandomFromList(structureElements));
     }
 
     private void centerStructure() {
-        Coordinate center = getStructureCenter();
+        Block center = getStructureCenter();
         offsetStructureElementsByCenter(center);
     }
 
-    private Coordinate getStructureCenter() {
-        return new Coordinate(sumCoordinate(Coordinate::getX), sumCoordinate(Coordinate::getY));
+    private Block getStructureCenter() {
+        final double minX = minCoordinate(Block::getX);
+        final double maxX = maxCoordinate(Block::getX);
+        final double minY = minCoordinate(Block::getY);
+        final double maxY = maxCoordinate(Block::getY);
+        return new Block((maxX + minX) / 2, (maxY + minY) / 2);
     }
 
-    private double sumCoordinate(ToDoubleFunction<Coordinate> accessor) {
-        return structureElements.stream().mapToDouble(accessor).sum();
+    private double minCoordinate(ToDoubleFunction<Block> accessor) {
+        return structureElements.stream().mapToDouble(accessor).min().orElse(0);
     }
 
-    private void offsetStructureElementsByCenter(Coordinate center) {
+    private double maxCoordinate(ToDoubleFunction<Block> accessor) {
+        return structureElements.stream().mapToDouble(accessor).max().orElse(0);
+    }
+
+    private void offsetStructureElementsByCenter(Block center) {
         structureElements.forEach(element -> element.subtract(center));
     }
 }

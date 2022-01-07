@@ -1,10 +1,10 @@
 package com.sinthoras.randograf.phases;
 
 import com.sinthoras.randograf.cards.Card;
-import com.sinthoras.randograf.cards.covers.CardGameEnd;
+import com.sinthoras.randograf.cards.covers.CardGameStart;
+import com.sinthoras.randograf.phases.seasons.Spring;
 
-public class GameEnd implements Phase {
-
+public class GameStart implements Phase {
     @Override
     public Card drawCard() {
         return getCover();
@@ -12,7 +12,7 @@ public class GameEnd implements Phase {
 
     @Override
     public Phase getNextPhase() {
-        return new GameStart();
+        return new Spring();
     }
 
     @Override
@@ -22,6 +22,6 @@ public class GameEnd implements Phase {
 
     @Override
     public Card getCover() {
-        return new CardGameEnd();
+        return new CardGameStart();
     }
 }
