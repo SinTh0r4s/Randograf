@@ -1,5 +1,8 @@
 package com.sinthoras.randograf.structure;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.util.ArraySet;
 
 import java.util.Objects;
@@ -57,4 +60,18 @@ public class Block {
     public int hashCode() {
         return Objects.hash(x, y);
     }
+
+    public void draw(Canvas canvas, Paint paint) {
+        float blockSize = canvas.getWidth() /6.0f;
+        float centerx = canvas.getWidth() /2.0f;
+        float centery = canvas.getHeight() /2.0f;
+        float left = (float) (blockSize * x + centerx - blockSize / 2.0f);
+        float right = left + blockSize;
+        float top = (float) (blockSize * y + centery - blockSize / 2.0f);
+        float bottom = top + blockSize;
+
+        RectF rect= new RectF(left,top,right,bottom);
+        canvas.drawRect(rect,paint);
+    }
+
 }
