@@ -24,4 +24,9 @@ public class GameEnd implements Phase {
     public Card getCover() {
         return new CardGameEnd();
     }
+
+    @Override
+    public String getElapsedTime() {
+        return "";
+    }
 }

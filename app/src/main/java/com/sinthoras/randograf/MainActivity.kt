@@ -8,6 +8,7 @@ import android.widget.TextView
 import com.sinthoras.randograf.cards.Card
 import com.sinthoras.randograf.phases.GameStart
 import com.sinthoras.randograf.phases.Phase
+import com.sinthoras.randograf.phases.seasons.Summer
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -32,9 +33,20 @@ class MainActivity : AppCompatActivity() {
         else {
             drawCard(phase.drawCard())
         }
+        displayElapsedTime(phase.elapsedTime)
+    }
+
+    fun onNewGameClicked(view: View) {
+        phase = GameStart()
+        drawCard(phase.cover)
+        displayElapsedTime(phase.elapsedTime)
     }
 
     fun drawCard(card: Card) {
         findViewById<TextView>(R.id.veryUsefulLabel).setText(card.title)
+    }
+
+    fun displayElapsedTime(elapsedTime: String) {
+        findViewById<TextView>(R.id.progressCounter).setText("Progress: " + elapsedTime)
     }
 }

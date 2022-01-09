@@ -24,4 +24,9 @@ public abstract class Season implements Phase {
     }
 
     protected abstract int getSeasonDuration();
+
+    @Override
+    public String getElapsedTime() {
+        return "" + deck.getElapsedTime() + " / " + getSeasonDuration();
+    }
 }

@@ -24,4 +24,9 @@ public class GameStart implements Phase {
     public Card getCover() {
         return new CardGameStart();
     }
+
+    @Override
+    public String getElapsedTime() {
+        return "";
+    }
 }

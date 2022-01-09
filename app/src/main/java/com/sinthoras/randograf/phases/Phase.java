@@ -11,4 +11,6 @@ public interface Phase {
     boolean isOver();
 
     Card getCover();
+
+    String getElapsedTime();
 }
