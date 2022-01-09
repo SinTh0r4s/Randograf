@@ -1,5 +1,8 @@
 package com.sinthoras.randograf.structure;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+
 import com.sinthoras.randograf.Colors;
 
 import java.util.List;
@@ -20,5 +23,9 @@ public class Structure {
 
     public int size() {
         return elements.size();
+    }
+
+    public void draw(Canvas canvas, Paint paint) {
+        
     }
 }

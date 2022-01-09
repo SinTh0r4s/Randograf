@@ -1,5 +1,7 @@
 package com.sinthoras.randograf.cards
 
+import android.graphics.Canvas
+import android.graphics.Paint
 import com.sinthoras.randograf.Colors
 import com.sinthoras.randograf.MainActivity
 import com.sinthoras.randograf.structure.StructureGenerator
@@ -11,8 +13,8 @@ class CardJoker : Card() {
         return 0
     }
 
-    override fun paint() {
-        // TODO
+    override fun paint(canvas: Canvas, paint: Paint) {
+        structure.draw(canvas, paint);
     }
 
     override fun getTitle(): String {

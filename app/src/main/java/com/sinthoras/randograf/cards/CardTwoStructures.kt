@@ -1,5 +1,7 @@
 package com.sinthoras.randograf.cards
 
+import android.graphics.Canvas
+import android.graphics.Paint
 import com.sinthoras.randograf.Colors
 import com.sinthoras.randograf.MainActivity
 import com.sinthoras.randograf.R
@@ -17,8 +19,10 @@ abstract class CardTwoStructures protected constructor(
 
     private val structureA: Structure
     private val structureB: Structure
-    override fun paint() {
-        // TODO
+
+    override fun paint(canvas: Canvas, paint: Paint) {
+        structureA.draw(canvas, paint);
+        structureB.draw(canvas, paint);
     }
 
     override fun getTitle(): String {

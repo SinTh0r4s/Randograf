@@ -1,5 +1,7 @@
 package com.sinthoras.randograf.cards
 
+import android.graphics.Canvas
+import android.graphics.Paint
 import com.sinthoras.randograf.MainActivity
 import com.sinthoras.randograf.R
 
@@ -8,8 +10,8 @@ class CardRuin : Card() {
         return 0
     }
 
-    override fun paint() {
-        // TODO
+    override fun paint(canvas: Canvas, paint: Paint) {
+
     }
 
     override fun getTitle(): String {

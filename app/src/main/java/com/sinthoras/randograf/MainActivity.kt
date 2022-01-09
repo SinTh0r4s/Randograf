@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     fun drawCard(card: Card) {
         findViewById<TextView>(R.id.veryUsefulLabel).setText(card.title)
+        findViewById<CardView>(R.id.cardView).setCard(card);
     }
 
     fun displayElapsedTime(elapsedTime: String) {
