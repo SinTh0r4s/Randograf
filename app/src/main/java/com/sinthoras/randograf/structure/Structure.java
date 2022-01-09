@@ -26,7 +26,7 @@ public class Structure {
     }
 
     public void draw(Canvas canvas, Paint paint) {
-        paint.setColor(color.getColor().toArgb();
+        paint.setColor(color.toArgb());
         elements.forEach(block -> block.draw(canvas, paint));
     }
 }
