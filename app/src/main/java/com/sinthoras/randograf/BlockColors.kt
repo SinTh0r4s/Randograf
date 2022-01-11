@@ -3,7 +3,7 @@ package com.sinthoras.randograf
 import android.content.Context
 import android.os.Build
 
-enum class Colors(val colorId: Int) {
+enum class BlockColors(val colorId: Int) {
     VILLAGE(R.color.village),
     FOREST(R.color.forest),
     RIVER(R.color.river),

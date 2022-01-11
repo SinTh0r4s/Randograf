@@ -1,6 +1,7 @@
 package com.sinthoras.randograf.phases.seasons;
 
 import com.sinthoras.randograf.Deck;
+import com.sinthoras.randograf.PhaseColors;
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.covers.CardWinter;
 import com.sinthoras.randograf.phases.GameEnd;
@@ -25,5 +26,10 @@ public class Winter extends Season {
     @Override
     public Card getCover() {
         return new CardWinter();
+    }
+
+    @Override
+    public PhaseColors getPhaseColor() {
+        return PhaseColors.WINTER;
     }
 }

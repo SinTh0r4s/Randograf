@@ -3,21 +3,21 @@ package com.sinthoras.randograf.structure;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-import com.sinthoras.randograf.Colors;
+import com.sinthoras.randograf.BlockColors;
 
 import java.util.List;
 
 public class Structure {
 
-    private final Colors color;
+    private final BlockColors color;
     private final List<Block> elements;
 
-    Structure(List<Block> elements, Colors color) {
+    Structure(List<Block> elements, BlockColors color) {
         this.elements = elements;
         this.color = color;
     }
 
-    public Structure copyWithColor(Colors color) {
+    public Structure copyWithColor(BlockColors color) {
         return new Structure(elements, color);
     }
 

@@ -1,5 +1,6 @@
 package com.sinthoras.randograf.phases;
 
+import com.sinthoras.randograf.PhaseColors;
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.covers.CardGameEnd;
 
@@ -28,5 +29,10 @@ public class GameEnd implements Phase {
     @Override
     public String getElapsedTime() {
         return "";
+    }
+
+    @Override
+    public PhaseColors getPhaseColor() {
+        return PhaseColors.GAME_END;
     }
 }

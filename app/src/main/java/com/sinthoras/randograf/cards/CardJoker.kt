@@ -2,13 +2,13 @@ package com.sinthoras.randograf.cards
 
 import android.graphics.Canvas
 import android.graphics.Paint
-import com.sinthoras.randograf.Colors
+import com.sinthoras.randograf.BlockColors
 import com.sinthoras.randograf.MainActivity
 import com.sinthoras.randograf.structure.StructureGenerator
 import com.sinthoras.randograf.R
 
 class CardJoker : Card() {
-    private val structure = StructureGenerator.generateStructure(1).withColor(Colors.ALL)
+    private val structure = StructureGenerator.generateStructure(1).withColor(BlockColors.ALL)
     override fun getDuration(): Int {
         return 0
     }

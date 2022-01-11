@@ -8,10 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="summer">#FFFFEB3B</color>
-    <color name="autumn">#FFFF9800</color>
-    <color name="winter">#92C1CF</color>
-    <color name="spring">#FF8BC34A</color>
+    <color name="game_start">#55616161</color>
+    <color name="spring">#558BC34A</color>
+    <color name="summer">#55FFEB3B</color>
+    <color name="autumn">#55FF9800</color>
+    <color name="winter">#5592C1CF</color>
+    <color name="game_end">#551C1C1C</color>
+
 
     <color name="village">#FFFF0000</color>
     <color name="fields">#FFFF9800</color>

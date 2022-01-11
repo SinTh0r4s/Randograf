@@ -2,13 +2,13 @@ package com.sinthoras.randograf.cards;
 
 import static com.sinthoras.randograf.Random.getRandomFromTo;
 
-import com.sinthoras.randograf.Colors;
+import com.sinthoras.randograf.BlockColors;
 import com.sinthoras.randograf.structure.Structure;
 import com.sinthoras.randograf.structure.StructureGenerator;
 
 public class CardVariableStructure extends CardTwoStructures {
 
-    public CardVariableStructure(Colors color) {
+    public CardVariableStructure(BlockColors color) {
         super(color, structureA -> StructureGenerator.generateStructure(getSizeForStructureB(structureA)).withColor(color));
     }
 

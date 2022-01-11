@@ -48,16 +48,16 @@ public class Deck {
                         new CardRuin(),
                         new CardRuin(),
                         new CardJoker(),
-                        new CardVariableStructure(Colors.VILLAGE),
-                        new CardVariableStructure(Colors.FOREST),
-                        new CardVariableStructure(Colors.RIVER),
-                        new CardVariableStructure(Colors.FIELD),
-                        new CardVariableColor(Colors.VILLAGE, Colors.FOREST),
-                        new CardVariableColor(Colors.VILLAGE, Colors.RIVER),
-                        new CardVariableColor(Colors.VILLAGE, Colors.FIELD),
-                        new CardVariableColor(Colors.FOREST, Colors.RIVER),
-                        new CardVariableColor(Colors.FOREST, Colors.FIELD),
-                        new CardVariableColor(Colors.RIVER, Colors.FIELD)
+                        new CardVariableStructure(BlockColors.VILLAGE),
+                        new CardVariableStructure(BlockColors.FOREST),
+                        new CardVariableStructure(BlockColors.RIVER),
+                        new CardVariableStructure(BlockColors.FIELD),
+                        new CardVariableColor(BlockColors.VILLAGE, BlockColors.FOREST),
+                        new CardVariableColor(BlockColors.VILLAGE, BlockColors.RIVER),
+                        new CardVariableColor(BlockColors.VILLAGE, BlockColors.FIELD),
+                        new CardVariableColor(BlockColors.FOREST, BlockColors.RIVER),
+                        new CardVariableColor(BlockColors.FOREST, BlockColors.FIELD),
+                        new CardVariableColor(BlockColors.RIVER, BlockColors.FIELD)
                 )
         );
     }

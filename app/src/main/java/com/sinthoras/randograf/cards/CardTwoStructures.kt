@@ -2,7 +2,7 @@ package com.sinthoras.randograf.cards
 
 import android.graphics.Canvas
 import android.graphics.Paint
-import com.sinthoras.randograf.Colors
+import com.sinthoras.randograf.BlockColors
 import com.sinthoras.randograf.MainActivity
 import com.sinthoras.randograf.R
 import com.sinthoras.randograf.Random
@@ -10,7 +10,7 @@ import com.sinthoras.randograf.structure.Structure
 import com.sinthoras.randograf.structure.StructureGenerator
 
 abstract class CardTwoStructures protected constructor(
-    colorA: Colors?,
+    colorA: BlockColors?,
     generator: StructureBGenerator
 ) : Card() {
     interface StructureBGenerator {

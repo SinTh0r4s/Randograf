@@ -27,8 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onActionButtonClicked(view: View) {
         if(phase.isOver) {
-            phase = phase.nextPhase
-            drawCard(phase.cover)
+            updatePhase(phase.nextPhase)
         }
         else {
             drawCard(phase.drawCard())
@@ -37,8 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onNewGameClicked(view: View) {
-        phase = GameStart()
-        drawCard(phase.cover)
+        updatePhase(GameStart())
         displayElapsedTime(phase.elapsedTime)
     }
 
@@ -49,5 +47,11 @@ class MainActivity : AppCompatActivity() {
 
     fun displayElapsedTime(elapsedTime: String) {
         findViewById<TextView>(R.id.progressCounter).setText("Progress: " + elapsedTime)
+    }
+
+    fun updatePhase(phase: Phase) {
+        this.phase = phase
+        findViewById<View>(R.id.background).setBackgroundColor(phase.phaseColor.toArgb())
+        drawCard(phase.cover)
     }
 }

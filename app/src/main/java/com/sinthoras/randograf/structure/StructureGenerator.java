@@ -2,7 +2,7 @@ package com.sinthoras.randograf.structure;
 
 import static com.sinthoras.randograf.Random.drawRandomFromList;
 
-import com.sinthoras.randograf.Colors;
+import com.sinthoras.randograf.BlockColors;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,13 +21,13 @@ public class StructureGenerator {
         return structureGenerator;
     }
 
-    public Structure withColor(Colors color) {
+    public Structure withColor(BlockColors color) {
         return new Structure(structureElements, color);
     }
 
     private void generateStructureElements(int size) {
         addRootElement();
-        for(int i = 0; i < size + 1; i++) {
+        for(int i = 0; i < size; i++) {
             addRandomNeighbor();
         }
         removeRandomElement();

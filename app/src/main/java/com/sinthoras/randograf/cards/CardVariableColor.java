@@ -1,11 +1,10 @@
 package com.sinthoras.randograf.cards;
 
-import com.sinthoras.randograf.Colors;
-import com.sinthoras.randograf.structure.Structure;
+import com.sinthoras.randograf.BlockColors;
 
 public class CardVariableColor extends CardTwoStructures {
 
-    public CardVariableColor(Colors colorA, Colors colorB) {
+    public CardVariableColor(BlockColors colorA, BlockColors colorB) {
         super(colorA, structureA -> structureA.copyWithColor(colorB));
     }
 

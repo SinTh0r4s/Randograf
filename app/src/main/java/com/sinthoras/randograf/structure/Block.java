@@ -27,10 +27,10 @@ public class Block {
 
     public Set<Block> getNeighbors() {
         final Set<Block> neighbors = new ArraySet<>();
-        neighbors.add(new Block(getX() - 1, getY() - 1));
-        neighbors.add(new Block(getX() - 1, getY() + 1));
-        neighbors.add(new Block(getX() + 1, getY() - 1));
-        neighbors.add(new Block(getX() + 1, getY() + 1));
+        neighbors.add(new Block(getX() - 1, getY()));
+        neighbors.add(new Block(getX(), getY() + 1));
+        neighbors.add(new Block(getX() + 1, getY()));
+        neighbors.add(new Block(getX(), getY() - 1));
         return neighbors;
     }
 

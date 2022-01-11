@@ -1,5 +1,6 @@
 package com.sinthoras.randograf.phases;
 
+import com.sinthoras.randograf.PhaseColors;
 import com.sinthoras.randograf.cards.Card;
 
 public interface Phase {
@@ -13,4 +14,6 @@ public interface Phase {
     Card getCover();
 
     String getElapsedTime();
+
+    PhaseColors getPhaseColor();
 }
