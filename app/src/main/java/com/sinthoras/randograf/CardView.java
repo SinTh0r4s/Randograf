@@ -15,21 +15,15 @@ public class CardView extends View {
     private Card card = new CardGameStart();
 
     public CardView(Context context) {
-        super(context);
-        init();
+        this(context, null);
     }
 
     public CardView(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs, 0);
     }
 
     public CardView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init();
-    }
-
-    private void init() {
         paint.setAntiAlias(true);
     }
 
