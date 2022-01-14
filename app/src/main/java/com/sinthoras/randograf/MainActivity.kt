@@ -8,7 +8,6 @@ import android.widget.TextView
 import com.sinthoras.randograf.cards.Card
 import com.sinthoras.randograf.phases.GameStart
 import com.sinthoras.randograf.phases.Phase
-import com.sinthoras.randograf.phases.seasons.Summer
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -30,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             updatePhase(phase.nextPhase)
         }
         else {
-            drawCard(phase.drawCard())
+            showCard(phase.drawCard())
         }
         displayElapsedTime(phase.elapsedTime)
     }
@@ -40,9 +39,13 @@ class MainActivity : AppCompatActivity() {
         displayElapsedTime(phase.elapsedTime)
     }
 
-    fun drawCard(card: Card) {
+    fun showCard(card: Card) {
         findViewById<TextView>(R.id.veryUsefulLabel).setText(card.title)
-        findViewById<CardView>(R.id.cardView).setCard(card);
+
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.cardLayout, card)
+            commit()
+        }
     }
 
     fun displayElapsedTime(elapsedTime: String) {
@@ -52,6 +55,6 @@ class MainActivity : AppCompatActivity() {
     fun updatePhase(phase: Phase) {
         this.phase = phase
         findViewById<View>(R.id.background).setBackgroundColor(phase.phaseColor.toArgb())
-        drawCard(phase.cover)
+        showCard(phase.cover)
     }
 }

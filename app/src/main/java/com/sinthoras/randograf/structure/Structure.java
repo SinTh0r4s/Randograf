@@ -11,10 +11,13 @@ public class Structure {
 
     private final BlockColors color;
     private final List<Block> elements;
+    private final Paint paint;
 
     Structure(List<Block> elements, BlockColors color) {
         this.elements = elements;
         this.color = color;
+        paint = new Paint();
+        paint.setColor(color.toArgb());
     }
 
     public Structure copyWithColor(BlockColors color) {
@@ -25,8 +28,11 @@ public class Structure {
         return elements.size();
     }
 
-    public void draw(Canvas canvas, Paint paint) {
-        paint.setColor(color.toArgb());
+    public BlockColors getColor() {
+        return color;
+    }
+
+    public void draw(Canvas canvas) {
         elements.forEach(block -> block.draw(canvas, paint));
     }
 }

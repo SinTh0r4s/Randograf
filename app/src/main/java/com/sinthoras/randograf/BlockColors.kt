@@ -1,6 +1,5 @@
 package com.sinthoras.randograf
 
-import android.content.Context
 import android.os.Build
 
 enum class BlockColors(val colorId: Int) {

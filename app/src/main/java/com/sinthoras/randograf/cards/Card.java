@@ -1,9 +1,12 @@
 package com.sinthoras.randograf.cards;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import androidx.fragment.app.Fragment;
 
-public abstract class Card {
+public abstract class Card extends Fragment {
+
+    protected Card(int contentLayerID) {
+        super(contentLayerID);
+    }
 
     protected boolean drawnWithRuin = false;
 
@@ -12,8 +15,6 @@ public abstract class Card {
     }
 
     public abstract int getDuration();
-
-    public abstract void paint(Canvas canvas, Paint paint);
 
     public abstract String getTitle();
 }
