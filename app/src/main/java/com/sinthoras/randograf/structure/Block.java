@@ -65,10 +65,10 @@ public class Block {
         float blockSize = canvas.getWidth() /6.0f;
         float centerx = canvas.getWidth() /2.0f;
         float centery = canvas.getHeight() /2.0f;
-        float left = (float) (blockSize * x + centerx - blockSize / 2.0f);
-        float right = left + blockSize;
-        float top = (float) (blockSize * y + centery - blockSize / 2.0f);
-        float bottom = top + blockSize;
+        float left = (float) (blockSize * x + centerx - blockSize / 2.0f * 0.9f);
+        float right = left + blockSize * 0.9f;
+        float top = (float) (blockSize * y + centery - blockSize / 2.0f * 0.9f);
+        float bottom = top + blockSize * 0.9f;
 
         RectF rect= new RectF(left,top,right,bottom);
         canvas.drawRect(rect,paint);
