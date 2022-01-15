@@ -21,6 +21,6 @@ class StructureView @JvmOverloads constructor(
     }
 
     override fun onDraw(canvas: Canvas) {
-        structure?.draw(canvas)
+        structure?.draw(context, canvas)
     }
 }

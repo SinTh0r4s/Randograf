@@ -3,7 +3,6 @@ package com.sinthoras.randograf.cards
 import android.os.Bundle
 import android.view.View
 import com.sinthoras.randograf.BlockColors
-import com.sinthoras.randograf.MainActivity
 import com.sinthoras.randograf.R
 import com.sinthoras.randograf.Random
 import com.sinthoras.randograf.structure.Structure
@@ -23,8 +22,8 @@ abstract class CardTwoStructures protected constructor(
     private val structureB: Structure
 
 
-    override fun getTitle(): String {
-        return MainActivity.getResourceString(R.string.card_title_two_options)
+    override fun getTitle(): Int {
+        return R.string.card_title_two_options
     }
 
     init {

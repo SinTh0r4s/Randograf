@@ -1,7 +1,10 @@
 package com.sinthoras.randograf.structure;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+
+import androidx.core.content.ContextCompat;
 
 import com.sinthoras.randograf.BlockColors;
 
@@ -17,7 +20,6 @@ public class Structure {
         this.elements = elements;
         this.color = color;
         paint = new Paint();
-        paint.setColor(color.toArgb());
     }
 
     public Structure copyWithColor(BlockColors color) {
@@ -32,7 +34,8 @@ public class Structure {
         return color;
     }
 
-    public void draw(Canvas canvas) {
+    public void draw(Context context, Canvas canvas) {
+        paint.setColor(ContextCompat.getColor(context, color.getColor()));
         elements.forEach(block -> block.draw(canvas, paint));
     }
 }

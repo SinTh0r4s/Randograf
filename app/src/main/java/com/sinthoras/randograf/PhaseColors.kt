@@ -1,6 +1,6 @@
 package com.sinthoras.randograf
 
-import android.os.Build
+import androidx.annotation.ColorRes
 
 enum class PhaseColors(val colorId: Int) {
     GAME_START(R.color.game_start),
@@ -10,9 +10,6 @@ enum class PhaseColors(val colorId: Int) {
     WINTER(R.color.winter),
     GAME_END(R.color.game_end);
 
-    fun toArgb() =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            MainActivity.getAppContext().resources.getColor(colorId, null)
-        else
-            MainActivity.getAppContext().resources.getColor(colorId) // Deprecated in API level 23
+    @ColorRes
+    fun getColor() = colorId
 }

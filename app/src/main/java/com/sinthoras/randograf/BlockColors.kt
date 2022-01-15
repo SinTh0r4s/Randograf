@@ -1,6 +1,6 @@
 package com.sinthoras.randograf
 
-import android.os.Build
+import androidx.annotation.ColorRes
 
 enum class BlockColors(val colorId: Int) {
     VILLAGE(R.color.village),
@@ -10,9 +10,6 @@ enum class BlockColors(val colorId: Int) {
     MONSTER(R.color.monster),
     ALL(R.color.all);
 
-    fun toArgb() =
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            MainActivity.getAppContext().resources.getColor(colorId, null)
-        else
-            MainActivity.getAppContext().resources.getColor(colorId) // Deprecated in API level 23
+    @ColorRes
+    fun getColor() = colorId
 }

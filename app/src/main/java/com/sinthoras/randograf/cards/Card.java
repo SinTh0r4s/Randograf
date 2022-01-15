@@ -1,5 +1,6 @@
 package com.sinthoras.randograf.cards;
 
+import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
 public abstract class Card extends Fragment {
@@ -16,5 +17,6 @@ public abstract class Card extends Fragment {
 
     public abstract int getDuration();
 
-    public abstract String getTitle();
+    @StringRes
+    public abstract int getTitle();
 }
