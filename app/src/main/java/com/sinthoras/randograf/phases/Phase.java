@@ -1,5 +1,7 @@
 package com.sinthoras.randograf.phases;
 
+import androidx.annotation.StringRes;
+
 import com.sinthoras.randograf.PhaseColors;
 import com.sinthoras.randograf.cards.Card;
 
@@ -16,4 +18,7 @@ public interface Phase {
     String getElapsedTime();
 
     PhaseColors getPhaseColor();
+
+    @StringRes
+    int getActionButtonText();
 }

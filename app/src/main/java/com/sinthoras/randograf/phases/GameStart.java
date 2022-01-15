@@ -1,6 +1,9 @@
 package com.sinthoras.randograf.phases;
 
+import androidx.annotation.StringRes;
+
 import com.sinthoras.randograf.PhaseColors;
+import com.sinthoras.randograf.R;
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.covers.CardGameStart;
 import com.sinthoras.randograf.phases.seasons.Spring;
@@ -34,5 +37,11 @@ public class GameStart implements Phase {
     @Override
     public PhaseColors getPhaseColor() {
         return PhaseColors.GAME_START;
+    }
+
+    @Override
+    @StringRes
+    public int getActionButtonText() {
+        return R.string.label_start_game;
     }
 }

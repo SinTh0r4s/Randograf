@@ -1,6 +1,9 @@
 package com.sinthoras.randograf.phases;
 
+import androidx.annotation.StringRes;
+
 import com.sinthoras.randograf.PhaseColors;
+import com.sinthoras.randograf.R;
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.covers.CardGameEnd;
 
@@ -34,5 +37,11 @@ public class GameEnd implements Phase {
     @Override
     public PhaseColors getPhaseColor() {
         return PhaseColors.GAME_END;
+    }
+
+    @Override
+    @StringRes
+    public int getActionButtonText() {
+        return R.string.label_new_game;
     }
 }

@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             showCard(phase.drawCard())
         }
         displayElapsedTime(phase.elapsedTime)
+        findViewById<Button>(R.id.buttonAction)?.setText(phase.actionButtonText);
     }
 
     fun onNewGameClicked(view: View) {
@@ -51,5 +52,6 @@ class MainActivity : AppCompatActivity() {
         this.phase = phase
         findViewById<View>(R.id.background).setBackgroundColor(ContextCompat.getColor(baseContext, phase.phaseColor.getColor()))
         showCard(phase.cover)
+        findViewById<Button>(R.id.buttonAction)?.setText(phase.actionButtonText);
     }
 }

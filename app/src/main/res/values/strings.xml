@@ -12,4 +12,9 @@
     <string name="card_title_joker">Joker</string>
     <string name="card_title_monster">Monster</string>
     <string name="card_title_ruin">Ruin</string>
+
+    <string name="label_start_game">Start Game</string>
+    <string name="label_next_season">Next Season</string>
+    <string name="label_draw_card">Draw Card</string>
+    <string name="label_new_game">New Game</string>
 </resources>

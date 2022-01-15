@@ -1,6 +1,9 @@
 package com.sinthoras.randograf.phases.seasons;
 
+import androidx.annotation.StringRes;
+
 import com.sinthoras.randograf.Deck;
+import com.sinthoras.randograf.R;
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.phases.Phase;
 
@@ -28,5 +31,14 @@ public abstract class Season implements Phase {
     @Override
     public String getElapsedTime() {
         return "" + deck.getElapsedTime() + " / " + getSeasonDuration();
+    }
+
+    @Override
+    @StringRes
+    public int getActionButtonText() {
+        if(isOver()) {
+            return R.string.label_next_season;
+        }
+        return R.string.label_draw_card;
     }
 }
