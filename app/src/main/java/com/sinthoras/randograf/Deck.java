@@ -1,6 +1,6 @@
 package com.sinthoras.randograf;
 
-import static com.sinthoras.randograf.Random.drawRandomFromList;
+import static com.sinthoras.randograf.Random.drawRandomFromCollection;
 
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.CardJoker;
@@ -90,7 +90,7 @@ public class Deck {
     }
 
     private Card drawRandomAvailableCard() {
-        final Card drawnCard = drawRandomFromList(availableCards);
+        final Card drawnCard = drawRandomFromCollection(availableCards);
         availableCards.remove(drawnCard);
         drawnCards.add(drawnCard);
         return drawnCard;
