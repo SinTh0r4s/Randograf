@@ -1,6 +1,6 @@
 package com.sinthoras.randograf.structure;
 
-import static com.sinthoras.randograf.Random.drawRandomFromList;
+import static com.sinthoras.randograf.Random.drawRandomFromCollection;
 
 import com.sinthoras.randograf.BlockColors;
 
@@ -39,8 +39,7 @@ public class StructureGenerator {
     }
 
     private void addRandomNeighbor() {
-        final List<Block> neighbors = new ArrayList<>(getAvailableNeighborsToAdd());
-        final Block selectedNeighbor = drawRandomFromList(neighbors);
+        final Block selectedNeighbor = drawRandomFromCollection(getAvailableNeighborsToAdd());
         structureElements.add(selectedNeighbor);
     }
 
@@ -58,7 +57,7 @@ public class StructureGenerator {
     }
 
     private void removeRandomElement() {
-        structureElements.remove(drawRandomFromList(structureElements));
+        structureElements.remove(drawRandomFromCollection(structureElements));
     }
 
     private void centerStructure() {
