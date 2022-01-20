@@ -2,7 +2,7 @@ package com.sinthoras.randograf
 
 import androidx.annotation.ColorRes
 
-enum class PhaseColors(val colorId: Int) {
+enum class PhaseColors(@ColorRes val colorId: Int): Color {
     GAME_START(R.color.game_start),
     SPRING(R.color.spring),
     SUMMER(R.color.summer),
@@ -11,5 +11,5 @@ enum class PhaseColors(val colorId: Int) {
     GAME_END(R.color.game_end);
 
     @ColorRes
-    fun getColor() = colorId
+    override fun getColor() = colorId
 }

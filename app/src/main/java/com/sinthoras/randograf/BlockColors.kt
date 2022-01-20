@@ -2,7 +2,7 @@ package com.sinthoras.randograf
 
 import androidx.annotation.ColorRes
 
-enum class BlockColors(val colorId: Int) {
+enum class BlockColors(@ColorRes val colorId: Int): Color {
     VILLAGE(R.color.village),
     FOREST(R.color.forest),
     RIVER(R.color.river),
@@ -11,5 +11,5 @@ enum class BlockColors(val colorId: Int) {
     ALL(R.color.all);
 
     @ColorRes
-    fun getColor() = colorId
+    override fun getColor() = colorId
 }
