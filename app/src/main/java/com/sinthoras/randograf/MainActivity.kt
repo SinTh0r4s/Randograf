@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             showCard(phase.drawCard())
         }
         displayElapsedTime(phase.elapsedTime)
-        findViewById<Button>(R.id.buttonAction)?.setText(phase.actionButtonText);
+        findViewById<Button>(R.id.buttonAction)?.setText(phase.actionButtonText)
     }
 
     fun onNewGameClicked(view: View) {
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun showCard(card: Card) {
-        findViewById<TextView>(R.id.veryUsefulLabel).setText(card.title)
+        findViewById<TextView>(R.id.veryUsefulLabel).setText(card.getTitle())
 
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.cardLayout, card)
