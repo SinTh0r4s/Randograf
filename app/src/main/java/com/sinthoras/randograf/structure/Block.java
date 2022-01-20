@@ -74,4 +74,9 @@ public class Block {
         canvas.drawRect(rect,paint);
     }
 
+    public void swapXY() {
+        final double temp = x;
+        x = y;
+        y = temp;
+    }
 }

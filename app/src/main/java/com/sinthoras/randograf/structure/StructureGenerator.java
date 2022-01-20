@@ -18,6 +18,7 @@ public class StructureGenerator {
         final StructureGenerator structureGenerator = new StructureGenerator();
         structureGenerator.generateStructureElements(size);
         structureGenerator.centerStructure();
+        structureGenerator.orientStructure();
         return structureGenerator;
     }
 
@@ -83,5 +84,18 @@ public class StructureGenerator {
 
     private void offsetStructureElementsByCenter(Block center) {
         structureElements.forEach(element -> element.subtract(center));
+    }
+
+    private void orientStructure() {
+        // structure is already centered, get orientation by comparing max in both directions
+        final double maxX = maxCoordinate(Block::getX);
+        final double maxY = maxCoordinate(Block::getY);
+        if (maxY > maxX) {
+            swapXY();
+        }
+    }
+
+    private void swapXY() {
+        structureElements.forEach(Block::swapXY);
     }
 }
