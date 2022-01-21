@@ -12,4 +12,9 @@ public class Random {
     public static <T> T drawRandomFromCollection(Collection<T> collection) {
         return collection.stream().skip(random.nextInt(collection.size())).findFirst().orElse(null);
     }
+
+    public static int getRandom(int limit) {
+        return random.nextInt(limit);
+    }
+
 }
