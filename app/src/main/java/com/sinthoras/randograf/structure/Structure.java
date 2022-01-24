@@ -8,18 +8,17 @@ import androidx.core.content.ContextCompat;
 
 import com.sinthoras.randograf.BlockColors;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Structure {
+public class Structure implements Serializable {
 
     private final BlockColors color;
     private final List<Block> elements;
-    private final Paint paint;
 
     Structure(List<Block> elements, BlockColors color) {
         this.elements = elements;
         this.color = color;
-        paint = new Paint();
     }
 
     public Structure copyWithColor(BlockColors color) {
@@ -34,7 +33,7 @@ public class Structure {
         return color;
     }
 
-    public void draw(Context context, Canvas canvas) {
+    public void draw(Context context, Canvas canvas, Paint paint) {
         paint.setColor(ContextCompat.getColor(context, color.getColor()));
         elements.forEach(block -> block.draw(canvas, paint));
     }

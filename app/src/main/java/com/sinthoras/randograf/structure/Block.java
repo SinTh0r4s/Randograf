@@ -5,10 +5,11 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.util.ArraySet;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
-public class Block {
+public class Block implements Serializable {
     private double x;
     private double y;
 

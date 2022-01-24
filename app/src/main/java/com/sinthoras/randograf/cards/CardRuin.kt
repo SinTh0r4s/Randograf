@@ -2,7 +2,7 @@ package com.sinthoras.randograf.cards
 
 import com.sinthoras.randograf.R
 
-class CardRuin : Card(-1) {
+class CardRuin : Card() {
 
     override fun getDuration(): Int {
         return 0
