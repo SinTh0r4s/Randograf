@@ -80,4 +80,8 @@ public class Block implements Serializable {
         x = y;
         y = temp;
     }
+
+    public void shiftHorizontal(double offset) {
+        x += offset;
+    }
 }

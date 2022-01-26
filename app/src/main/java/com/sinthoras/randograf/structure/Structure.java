@@ -37,4 +37,8 @@ public class Structure implements Serializable {
         paint.setColor(ContextCompat.getColor(context, color.getColor()));
         elements.forEach(block -> block.draw(canvas, paint));
     }
+
+    public void shiftHorizontal(double offset) {
+        elements.forEach(block -> block.shiftHorizontal(offset));
+    }
 }
