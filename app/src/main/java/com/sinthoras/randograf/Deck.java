@@ -6,8 +6,8 @@ import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.CardJoker;
 import com.sinthoras.randograf.cards.CardMonster;
 import com.sinthoras.randograf.cards.CardRuin;
-import com.sinthoras.randograf.cards.CardVariableColor;
-import com.sinthoras.randograf.cards.CardVariableStructure;
+import com.sinthoras.randograf.cards.CardTwoColors;
+import com.sinthoras.randograf.cards.CardTwoStructures;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,16 +48,16 @@ public class Deck {
                         new CardRuin(),
                         new CardRuin(),
                         new CardJoker(),
-                        new CardVariableStructure(BlockColors.VILLAGE),
-                        new CardVariableStructure(BlockColors.FOREST),
-                        new CardVariableStructure(BlockColors.RIVER),
-                        new CardVariableStructure(BlockColors.FIELD),
-                        new CardVariableColor(BlockColors.VILLAGE, BlockColors.FOREST),
-                        new CardVariableColor(BlockColors.VILLAGE, BlockColors.RIVER),
-                        new CardVariableColor(BlockColors.VILLAGE, BlockColors.FIELD),
-                        new CardVariableColor(BlockColors.FOREST, BlockColors.RIVER),
-                        new CardVariableColor(BlockColors.FOREST, BlockColors.FIELD),
-                        new CardVariableColor(BlockColors.RIVER, BlockColors.FIELD)
+                        new CardTwoStructures(BlockColors.VILLAGE),
+                        new CardTwoStructures(BlockColors.FOREST),
+                        new CardTwoStructures(BlockColors.RIVER),
+                        new CardTwoStructures(BlockColors.FIELD),
+                        new CardTwoColors(BlockColors.VILLAGE, BlockColors.FOREST),
+                        new CardTwoColors(BlockColors.VILLAGE, BlockColors.RIVER),
+                        new CardTwoColors(BlockColors.VILLAGE, BlockColors.FIELD),
+                        new CardTwoColors(BlockColors.FOREST, BlockColors.RIVER),
+                        new CardTwoColors(BlockColors.FOREST, BlockColors.FIELD),
+                        new CardTwoColors(BlockColors.RIVER, BlockColors.FIELD)
                 )
         );
     }

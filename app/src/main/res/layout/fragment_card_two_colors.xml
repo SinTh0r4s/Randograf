@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cardviews.CardTwoStructuresView">
+    tools:context=".cardviews.CardTwoColorsView">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.sinthoras.randograf.structure.StructureView
-            android:id="@+id/structureSmallView"
+            android:id="@+id/structureViewA"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toTopOf="@+id/view"
@@ -28,14 +28,14 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:background="@android:color/darker_gray"
-            app:layout_constraintBottom_toTopOf="@+id/structureLargeView"
+            app:layout_constraintBottom_toTopOf="@+id/structureViewB"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/structureSmallView" />
+            app:layout_constraintTop_toBottomOf="@+id/structureViewA" />
 
         <com.sinthoras.randograf.structure.StructureView
-            android:id="@+id/structureLargeView"
+            android:id="@+id/structureViewB"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginBottom="16dp"

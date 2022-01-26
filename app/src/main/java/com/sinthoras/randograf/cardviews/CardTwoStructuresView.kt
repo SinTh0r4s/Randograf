@@ -3,19 +3,16 @@ package com.sinthoras.randograf.cardviews
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import com.sinthoras.randograf.R
-import com.sinthoras.randograf.cards.Card
 import com.sinthoras.randograf.cards.CardTwoStructures
 import com.sinthoras.randograf.structure.StructureView
 
-class CardTwoStructureView : CardView(R.layout.fragment_card_two_structures) {
+class CardTwoStructuresView : CardView(R.layout.fragment_card_two_structures) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        this.view?.findViewById<StructureView>(R.id.structureViewA)?.setStructure(getCard<CardTwoStructures>().getStructureA())
-        this.view?.findViewById<StructureView>(R.id.structureViewB)?.setStructure(getCard<CardTwoStructures>().getStructureB())
+        this.view?.findViewById<StructureView>(R.id.structureSmallView)?.setStructure(getCard<CardTwoStructures>().getStructureSmall())
+        this.view?.findViewById<StructureView>(R.id.structureLargeView)?.setStructure(getCard<CardTwoStructures>().getStructureLarge())
     }
 
     override fun onResume() {

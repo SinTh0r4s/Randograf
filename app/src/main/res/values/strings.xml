@@ -8,7 +8,8 @@
     <string name="card_title_autmn">Autumn</string>
     <string name="card_title_winter">Winter</string>
 
-    <string name="card_title_two_options">Two Options</string>
+    <string name="card_title_two_structures">Two Structures</string>
+    <string name="card_title_two_colors">Two Colors</string>
     <string name="card_title_joker">Joker</string>
     <string name="card_title_monster">Monster</string>
     <string name="card_title_ruin">Ruin</string>

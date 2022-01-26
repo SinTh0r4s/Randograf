@@ -2,32 +2,36 @@ package com.sinthoras.randograf.cards
 
 import com.sinthoras.randograf.BlockColors
 import com.sinthoras.randograf.R
-import com.sinthoras.randograf.Random
+import com.sinthoras.randograf.Random.getRandomFromTo
 import com.sinthoras.randograf.structure.Structure
 import com.sinthoras.randograf.structure.StructureGenerator
 
-abstract class CardTwoStructures protected constructor(
-    colorA: BlockColors?,
-    generator: StructureBGenerator
+class CardTwoStructures(
+    color: BlockColors
 ) : Card() {
 
-    interface StructureBGenerator {
-        fun generateStructureB(structureA: Structure?): Structure
-    }
+    private val structureSmall: Structure
+    private val structureLarge: Structure
 
-    private val structureA: Structure
-    private val structureB: Structure
+    fun getStructureSmall() = structureSmall
 
-    fun getStructureA() = structureA
-
-    fun getStructureB() = structureB
+    fun getStructureLarge() = structureLarge
 
     override fun getTitle(): Int {
-        return R.string.card_title_two_options
+        return R.string.card_title_two_structures
     }
 
     init {
-        structureA = StructureGenerator.generateStructure(Random.getRandomFromTo(4, 5)).withColor(colorA)
-        structureB = generator.generateStructureB(structureA)
+        structureLarge = StructureGenerator.generateStructure(getRandomFromTo(4, 5)).withColor(color)
+        structureSmall = StructureGenerator.generateStructure(getSizeForSmallStructure(structureLarge)).withColor(color)
+    }
+
+    override fun getDuration() = 1
+
+    private fun getSizeForSmallStructure(structureLarge: Structure): Int {
+        if(structureLarge.size() <= 4) {
+            return 2;
+        }
+        return getRandomFromTo(2, 3);
     }
 }
