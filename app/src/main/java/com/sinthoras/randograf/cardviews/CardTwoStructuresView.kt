@@ -12,7 +12,7 @@ class CardTwoStructuresView : CardView(R.layout.fragment_card_two_structures) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val smallStructure = getCard<CardTwoStructures>().getStructureSmall()
-        smallStructure.shiftHorizontal(-1.0)
+        smallStructure.shiftHorizontal(-1.0)        // make room for coin on the small structure
         this.view?.findViewById<StructureView>(R.id.structureSmallView)?.setStructure(smallStructure)
         this.view?.findViewById<StructureView>(R.id.structureLargeView)?.setStructure(getCard<CardTwoStructures>().getStructureLarge())
     }
