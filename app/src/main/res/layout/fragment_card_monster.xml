@@ -11,15 +11,16 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/ruinIcon"
+            android:id="@+id/monsterBackground"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:alpha=".4"
-            android:src="@drawable/ruin_icon"
+            android:alpha=".25"
+            android:src="@drawable/monster_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,15 +29,15 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="H,1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintDimensionRatio="H,1:1" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/rotateCounterClockWise"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:src="@drawable/rotate_ccw_icon"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +45,7 @@
 
         <ImageView
             android:id="@+id/rotateClockWise"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:src="@drawable/rotate_cw_icon"
             app:layout_constraintBottom_toBottomOf="parent"
