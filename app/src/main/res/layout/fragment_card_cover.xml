@@ -22,7 +22,7 @@
             app:layout_constraintDimensionRatio="H,1:1" />
 
         <TextView
-            android:id="@+id/textNewwSeason"
+            android:id="@+id/textNewSeason"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="New Season"
