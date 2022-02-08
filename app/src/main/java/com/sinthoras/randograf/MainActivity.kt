@@ -28,12 +28,14 @@ class MainActivity : AppCompatActivity() {
             findViewById<View>(R.id.background).setBackgroundColor(ContextCompat.getColor(baseContext, it.color))
         })
 
-        game.actionButtonText.observe(this, {
-            findViewById<Button>(R.id.buttonAction)?.setText(it);
+        game.actionButtonStatus.observe(this, {
+            findViewById<Button>(R.id.buttonAction)?.setText(it.stringId)
+            findViewById<Button>(R.id.buttonAction)?.setBackgroundColor(ContextCompat.getColor(
+                applicationContext, it.colorId))
         })
 
         game.ellapsedTime.observe(this, {
-            findViewById<TextView>(R.id.progressCounter).setText("Progress: " + it)
+            findViewById<TextView>(R.id.progressCounter).setText(it)
         })
     }
 

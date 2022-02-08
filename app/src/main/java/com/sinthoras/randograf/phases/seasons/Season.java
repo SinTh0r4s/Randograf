@@ -5,6 +5,7 @@ import androidx.annotation.StringRes;
 import com.sinthoras.randograf.Deck;
 import com.sinthoras.randograf.R;
 import com.sinthoras.randograf.cards.Card;
+import com.sinthoras.randograf.phases.ActionButtonStatus;
 import com.sinthoras.randograf.phases.Phase;
 
 public abstract class Season implements Phase {
@@ -31,16 +32,17 @@ public abstract class Season implements Phase {
     @Override
     public String getElapsedTime() {
         if (deck.getElapsedTime() < getSeasonDuration())
-            return "" + deck.getElapsedTime() + " / " + getSeasonDuration();
+            return "Progress: " + deck.getElapsedTime() + " / " + getSeasonDuration();
         else return "Season is over";
     }
 
     @Override
-    @StringRes
-    public int getActionButtonText() {
+    public ActionButtonStatus getActionButtonStatus() {
         if(isOver()) {
-            return R.string.label_next_season;
+            return getNewSeasonActionButtonStatus();
         }
-        return R.string.label_draw_card;
+        return ActionButtonStatus.DRAW_CARD;
     }
+
+    protected abstract ActionButtonStatus getNewSeasonActionButtonStatus();
 }

@@ -40,8 +40,7 @@ public class GameEnd implements Phase {
     }
 
     @Override
-    @StringRes
-    public int getActionButtonText() {
-        return R.string.label_new_game;
+    public ActionButtonStatus getActionButtonStatus() {
+        return ActionButtonStatus.GAME_START;
     }
 }

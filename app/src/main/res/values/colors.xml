@@ -26,5 +26,6 @@
 
     <color name="button_new">#CC1608</color>
     <color name="button_undo">#FFFFFF</color>
-    <color name="button_action">#7286F4</color>
+    <color name="button_draw_card">#7286F4</color>
+    <color name="button_new_season">#FF5100</color>
 </resources>

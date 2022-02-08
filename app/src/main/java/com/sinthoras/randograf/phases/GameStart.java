@@ -40,8 +40,7 @@ public class GameStart implements Phase {
     }
 
     @Override
-    @StringRes
-    public int getActionButtonText() {
-        return R.string.label_start_game;
+    public ActionButtonStatus getActionButtonStatus() {
+        return ActionButtonStatus.GAME_START;
     }
 }

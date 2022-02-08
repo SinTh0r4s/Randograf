@@ -4,6 +4,7 @@ import com.sinthoras.randograf.Deck;
 import com.sinthoras.randograf.PhaseColors;
 import com.sinthoras.randograf.cards.Card;
 import com.sinthoras.randograf.cards.covers.CardSummer;
+import com.sinthoras.randograf.phases.ActionButtonStatus;
 import com.sinthoras.randograf.phases.Phase;
 
 public class Summer extends Season {
@@ -30,5 +31,10 @@ public class Summer extends Season {
     @Override
     public PhaseColors getPhaseColor() {
         return PhaseColors.SUMMER;
+    }
+
+    @Override
+    protected ActionButtonStatus getNewSeasonActionButtonStatus() {
+        return ActionButtonStatus.NEW_SEASON;
     }
 }

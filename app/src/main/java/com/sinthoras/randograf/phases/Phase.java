@@ -19,6 +19,5 @@ public interface Phase {
 
     PhaseColors getPhaseColor();
 
-    @StringRes
-    int getActionButtonText();
+    ActionButtonStatus getActionButtonStatus();
 }
