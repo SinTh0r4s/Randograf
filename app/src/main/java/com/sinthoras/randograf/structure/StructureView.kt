@@ -5,19 +5,23 @@ import android.graphics.Canvas
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
+import androidx.constraintlayout.widget.ConstraintLayout
 import kotlin.jvm.JvmOverloads
 
 class StructureView @JvmOverloads constructor(
-    context: Context?,
+    context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0,
-    defStyleRes: Int = 0
-) : View(context, attrs, defStyleAttr, defStyleRes) {
+    defStyleAttr: Int = 0
+) : ConstraintLayout(context, attrs, defStyleAttr) {
+
+    init {
+        setWillNotDraw(false)
+    }
 
     private var structure: Structure? = null
     private val paint = Paint()
 
-    fun setStructure(structure: Structure?) {
+    fun setStructure(structure: Structure) {
         this.structure = structure
         invalidate()
     }
